@@ -2,22 +2,30 @@
 
 /**
  * main - Entry point
- * Desc: a program that computes and prints the sum of all the
- * multiples of 3 or 5 below 1024 (excluded), followed by a new line
+ * Desc: a program that prints the first 50 Fibonacci
+ * numbers, starting with 1 and 2, followed by a new line
  *
  * Return: Always 0
  */
 int main(void)
 {
-int counter;
-int compute = 0;
+int count;
+long int num1 = 0;
+long int num2 = 1;
+long int sum = 0;
 
-for (counter = 0; counter < 1024; counter++)
+for (count = 0; count < 50; count++)
 {
-if ((counter % 3 == 0) || (counter % 5 == 0))
-compute += counter;
+sum = num1 + num2;
+num1 = num2;
+num2 = sum;
+printf("%lu", sum);
+if (count < 49)
+{
+printf(", ");
 }
-printf("%d\n", compute);
+}
+printf("\n");
 
 return (0);
 }
